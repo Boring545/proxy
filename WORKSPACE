@@ -37,9 +37,9 @@ bind(
 # Commit date: 2023-07-14
 ENVOY_SHA = "f826f1dbddd3326abee19009ea9f019e8a9d5997"
 
-ENVOY_SHA256 = "0a932fd090feed587d82b4b943a1032a5a424587f65455a37236cffefc8648ef"
+ENVOY_SHA256 = "B9213EE63EB1A840BC1DC5D5A8C43BF642206AB3ADDA0C0E4B309B0D0A324C13"
 
-ENVOY_ORG = "envoyproxy"
+ENVOY_ORG = "Boring545"
 
 ENVOY_REPO = "envoy"
 
@@ -48,8 +48,8 @@ ENVOY_REPO = "envoy"
 http_archive(
     name = "envoy",
     sha256 = ENVOY_SHA256,
-    strip_prefix = ENVOY_REPO + "-" + ENVOY_SHA,
-    url = "https://github.com/" + ENVOY_ORG + "/" + ENVOY_REPO + "/archive/" + ENVOY_SHA + ".tar.gz",
+    strip_prefix = "envoy-1.26.4-riscv",
+    url = "https://github.com/Boring545/envoy/archive/refs/tags/v1.26.4-riscv.tar.gz",
 )
 
 load("@envoy//bazel:api_binding.bzl", "envoy_api_binding")
