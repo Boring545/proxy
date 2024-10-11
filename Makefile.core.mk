@@ -37,7 +37,7 @@ PATH := /usr/lib/llvm-10/bin:$(PATH)
 VERBOSE ?=
 ifeq "$(VERBOSE)" "1"
 BAZEL_STARTUP_ARGS := --client_debug $(BAZEL_STARTUP_ARGS)
-BAZEL_BUILD_ARGS := -s --sandbox_debug --verbose_failures --fission=no --local_cpu_resources=HOST_CPUS*.5 -local_ram_resources=HOST_RAM*.5  $(BAZEL_BUILD_ARGS)
+BAZEL_BUILD_ARGS := -s --sandbox_debug --verbose_failures $(BAZEL_BUILD_ARGS)
 endif
 
 ifeq "$(origin WITH_LIBCXX)" "undefined"
