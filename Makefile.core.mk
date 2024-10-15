@@ -77,7 +77,7 @@ CENTOS_BAZEL_TEST_TARGETS ?= ${BAZEL_TARGETS} \
 
 build:
 	export PATH=$(PATH) CC=$(CC) CXX=$(CXX) && \
-	bazel $(BAZEL_STARTUP_ARGS) build $(BAZEL_BUILD_ARGS) $(BAZEL_CONFIG_CURRENT) $(BAZEL_TARGETS)
+	bazel $(BAZEL_STARTUP_ARGS) build $(BAZEL_BUILD_ARGS) --fission=no --local_cpu_resources=50 --local_ram_resources=32768 --jobs=4 $(BAZEL_CONFIG_CURRENT) $(BAZEL_TARGETS)
 
 build_envoy: BAZEL_CONFIG_CURRENT = $(BAZEL_CONFIG_REL)
 build_envoy: BAZEL_TARGETS = //:envoy
